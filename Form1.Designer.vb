@@ -141,7 +141,7 @@ Partial Class Form1
         '
         'GroupBox1
         '
-        Me.GroupBox1.BackColor = System.Drawing.SystemColors.Control
+        Me.GroupBox1.BackColor = System.Drawing.SystemColors.Window
         Me.GroupBox1.Controls.Add(Me.GroupBox2)
         Me.GroupBox1.Controls.Add(Me.Button2)
         Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -240,7 +240,7 @@ Partial Class Form1
         '
         'GroupBox3
         '
-        Me.GroupBox3.BackColor = System.Drawing.SystemColors.Control
+        Me.GroupBox3.BackColor = System.Drawing.SystemColors.Window
         Me.GroupBox3.Controls.Add(Me.trackBarQuality)
         Me.GroupBox3.Controls.Add(Me.Button1)
         Me.GroupBox3.Controls.Add(Me.lblQuality)
