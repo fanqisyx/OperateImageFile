@@ -7,10 +7,7 @@ Public Class Form1
         Dim outputDirectory As String = txtOutputDirectory.Text.Trim()
 
         ' 保存当前填写的目录值到应用程序设置
-        My.Settings.InputDirectory = txtInputDirectory.Text.Trim()
-        My.Settings.OutputDirectory = txtOutputDirectory.Text.Trim()
-        My.Settings.qualityPercentage = trackBarQuality.Value
-        My.Settings.Save()
+        saveSettings()
 
         ' 检查输入目录是否存在
         If Not Directory.Exists(inputDirectory) Then
@@ -107,10 +104,24 @@ Public Class Form1
         End If
     End Sub
 
+    ''' <summary>
+    ''' 保存当前填写的目录值到应用程序设置
+    ''' </summary>
+    Sub saveSettings()
+        ' 保存当前填写的目录值到应用程序设置
+        My.Settings.InputDirectory = txtInputDirectory.Text.Trim()
+        My.Settings.OutputDirectory = txtOutputDirectory.Text.Trim()
+        My.Settings.qualityPercentage = trackBarQuality.Value
+        My.Settings.Save()
+    End Sub
+
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         ' 获取输入目录和输出目录
         Dim inputDirectory As String = txtInputDirectory.Text.Trim()
         Dim outputDirectory As String = txtOutputDirectory.Text.Trim()
+
+        saveSettings()
+
 
         ' 检查输入目录是否存在
         If Not Directory.Exists(inputDirectory) Then
@@ -175,5 +186,9 @@ Public Class Form1
                                    MessageBox.Show("裁剪完成。")
                                End Sub)
                  End Sub)
+    End Sub
+
+    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
+
     End Sub
 End Class
